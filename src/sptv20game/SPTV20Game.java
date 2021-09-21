@@ -19,12 +19,25 @@ public class SPTV20Game {
             int usernum=scanner.nextInt();
             if(truenum==usernum){
                 System.out.println("Ура! Ты угадал!");
-                break;
+                    System.out.println("Хочешь ли ты продолжить игру?(введите 0 чтобы выйти и любое другое число, чтобы продолжить).");
+                    int choose=scanner.nextInt();
+                    if(choose>0){
+                    i=0;
+                    }else{
+                    break;
+                    }
             }else{
                 if(attempt<3){
                     System.out.println("Неправильно, попробуй еще раз.");
                 }else{
                     System.out.println(":( Ты проиграл!Загадано число: "+truenum);
+                    System.out.println("Хочешь ли ты продолжить игру?(введите 0 чтобы выйти и любое другое число, чтобы продолжить).");
+                    int choose=scanner.nextInt();
+                    if(choose>0){
+                    i=0;
+                    }else{
+                    break;
+                    }
                 }
                 }    
             attempt++;
