@@ -9,11 +9,12 @@ public class SPTV20Game {
     public static void main(String[] args) {
         //Программа загадывает число и просит пользователя отгадать, 
         //если пользователь отгадал то он выйграл, иначе пользователь проиграл
-        int max=5, min=0,attempt=1;
+        int max=5, min=0,attempt=1,ii=1;
         Random random=new Random();
+        Scanner scanner=new Scanner(System.in);
+        while(ii==1){
         System.out.println("Программа загадала число от 0 до 5");
         int truenum=random.nextInt(max - min + 1) + min;
-        Scanner scanner=new Scanner(System.in);
         for(int i=0;i<3;i++){
             System.out.print("Отгадай число: ");
             int usernum=scanner.nextInt();
@@ -23,8 +24,10 @@ public class SPTV20Game {
                     int choose=scanner.nextInt();
                     if(choose>0){
                     i=0;
-                    }else{
+                    attempt=1;
                     break;
+                    }else{
+                    ii=ii-1;
                     }
             }else{
                 if(attempt<3){
@@ -35,12 +38,15 @@ public class SPTV20Game {
                     int choose=scanner.nextInt();
                     if(choose>0){
                     i=0;
-                    }else{
+                    attempt=1;
                     break;
+                    }else{
+                    ii=ii-1;
                     }
                 }
                 }    
             attempt++;
+            }
         }
     }
     
